@@ -6,7 +6,7 @@ READY_FILE=${READY_FILE:-/.ready}
 
 function init() {
 	touch $($RCLONE config file)
-	$RCLONE copy ${ARGS} ${REMOTE} /storage
+	$RCLONE copy ${ARGS} ${REMOTE} /storage || return 1
 	touch /storage${READY_FILE}	
 }
 
@@ -24,7 +24,6 @@ case $0 in
 		;;
 
 	*)
-		init
-		sync
+		init && sync
 		;;
 esac

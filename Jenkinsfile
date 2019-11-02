@@ -44,8 +44,8 @@ pipeline {
                                     tag -> image.push(tag)
                                 }
                             }
-                            docker.withRegistry(repo_i18n.registry, repo_i18n.credential) {
-                                image_i18n.push()
+                            docker.withRegistry(repo.registry, repo.credential) {
+                                image.push()
                             }                            
                         }
                     }

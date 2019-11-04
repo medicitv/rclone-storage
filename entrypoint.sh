@@ -1,6 +1,6 @@
 #!/bin/sh
 
-RCLONE=/root/rclone
+RCLONE=rclone
 PERIOD=${PERIOD:-30}
 READY_FILE=${READY_FILE:-/.ready}
 
